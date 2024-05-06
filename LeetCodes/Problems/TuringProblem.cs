@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace LeetCodes
 {
-    internal class TurintProblem1
+    internal class TuringProblem
     {
 
-        public static int TuringProblem1(string[] arr)
+        public static int Problem1(string[] arr)
         {
             var results = new List<int>();
             foreach (var item in arr)

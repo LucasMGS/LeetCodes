@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace LeetCodes
+namespace LeetCodes.Problems
 {
     public static class TwoPointers
     {

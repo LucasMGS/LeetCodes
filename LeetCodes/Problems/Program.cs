@@ -1,4 +1,5 @@
-﻿
+﻿using LeetCodes;
+
 //Console.WriteLine(LeetCodes.Solution.ContainsDuplicate([1, 2, 2]));
 //Console.WriteLine(LeetCodes.Solution.IsAnagram("nagaram", "anagramm"));
 //Console.WriteLine(LeetCodes.Solution.TwoSum([1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1], 11));
@@ -7,7 +8,6 @@
 //LeetCodes.Solution.Testa(["apple3", "banana", "8", "3"]);
 //LeetCodes.Solution.FindErrorNums([1,2,2]);
 //Console.WriteLine(LeetCodes.Solution.IsPalindrome("A man, a plan, a canal: Panama"));
-using LeetCodes;
 
 //Console.WriteLine(Stacks.IsValid("{[]}"));
 //Console.WriteLine(BinarySearch.Search([-1,0,3,5,9,12], 9));
@@ -20,4 +20,5 @@ using LeetCodes;
 //    Console.WriteLine(item);
 
 //}
-Console.WriteLine(StringManipulations.FrequencySort("tree"));
+//Console.WriteLine(StringManipulations.FrequencySort("tree"));
+Console.WriteLine();

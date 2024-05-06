@@ -1,7 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System;
 
 namespace LeetCodes;
 
@@ -66,16 +63,44 @@ public static class ArraysAndHashing
         {
             char[] chars = str.ToCharArray();
             Array.Sort(chars);
-            string sorted = new string(chars);
+            string sorted = new(chars);
 
             if (!anagrams.ContainsKey(sorted))
-                anagrams[sorted] = new List<string>();
+                anagrams[sorted] = [];
 
             anagrams[sorted].Add(str);
         }
 
         return anagrams.Select(kv => kv.Value).ToList<IList<string>>();
+    }
 
+    public static IList<string> FizzBuzz(int n)
+    {
+        //Given an integer n, return a string array answer(1 - indexed) where:
+
+        //answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+        //answer[i] == "Fizz" if i is divisible by 3.
+        //answer[i] == "Buzz" if i is divisible by 5.
+        //answer[i] == i(as a string) if none of the above conditions are true.
+
+        var result = new List<string>();
+
+        for(int x = 1; x <= n; x++)
+        {
+            var isDivisibleBy3 = x % 3 == 0;
+            var isDivisibleBy5 = x % 5 == 0;
+
+            if (isDivisibleBy3 && isDivisibleBy5)
+                result.Add("FizzBuzz");
+            else if (isDivisibleBy3 && !isDivisibleBy5)
+                result.Add("Fizz");
+
+            else if (!isDivisibleBy3 && isDivisibleBy5)
+                result.Add("Buzz");
+            else 
+                result.Add(x.ToString());
+        }
+        return result;
     }
 
 
