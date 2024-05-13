@@ -102,6 +102,23 @@ public static class ArraysAndHashing
         }
         return result;
     }
+    
+    public static int[] TopKFrequent(int[] nums, int k) {
+        var elemFreq = new Dictionary<int,int>();
+        foreach (var item in nums)
+        {
+           if(elemFreq.ContainsKey(item)) {
+            elemFreq[item]++;
+           } 
+           else {
+            elemFreq.Add(item,1);
+           }
+        }
+
+        var result = new int[k];
+
+        return elemFreq.OrderByDescending(x => x.Value).Select(x => x.Key).Take(k).ToArray();
+    }
 
 
 }

@@ -21,4 +21,10 @@
 
 //}
 //Console.WriteLine(StringManipulations.FrequencySort("tree"));
+
+var result = ArraysAndHashing.TopKFrequent([1, 1, 1, 2, 2, 3], 2);
+foreach (var item in result)
+{
+    Console.WriteLine(item);
+}
 Console.WriteLine();
