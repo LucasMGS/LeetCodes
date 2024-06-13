@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Globalization;
+using System.Text;
 
 namespace LeetCodes;
 
@@ -103,5 +106,107 @@ public static class ArraysAndHashing
         return result;
     }
 
+    public static int[] ProductExceptSelf(int[] nums)
+    {
+        var prefix = 1;
+        var result = new int[nums.Length];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            result[i] = prefix;
+            prefix *= nums[i];
+        }
+        var postFix = 1;
+        for (int i = nums.Length - 1; i >= 0; i--)
+        {
+            result[i] *= postFix;
+            postFix *= nums[i];
+        }
 
+        return result;
+    }
+
+    public static char[] ReverseString(char[] s)
+    {
+        var left = 0;
+        var right = s.Length - 1;
+        while(left != right && right > left) {
+            char aux = s[left];
+            s[left] = s[right];
+            s[right] = aux;
+            left++;
+            right--;
+        }
+        return s;
+    }
+
+    public static string LongestCommonPrefix(string[] strs)
+    {
+        //        Example 1:
+
+        //Input: strs = ["flower", "flow", "flight"]
+        //Output: "fl"
+        //Example 2:
+
+        //Input: strs = ["dog", "racecar", "car"]
+        //Output: ""
+        //Explanation: There is no common prefix among the input strings.
+
+        var stringBuilder = new StringBuilder(strs[0][0]);
+        if (strs.Length == 0)
+            return "";
+
+        foreach (var str in strs)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != stringBuilder[i] && stringBuilder.Length <= str.Length)
+                {
+                    stringBuilder.Remove(i, stringBuilder.Length - i);
+                    break;
+                }
+                stringBuilder.Append(str[i]);
+            }
+        }
+
+        return stringBuilder.ToString();
+    }
+
+    public static void SortColors(int[] nums)
+    {
+        var leftPointer = 0;
+        var midPointer = 0;
+        var rightPointer = nums.Length - 1;
+        //PROBLEM OF THE DUTCH NATION FLAG PROBLEM 
+        while (midPointer <= rightPointer)
+        {
+            switch (nums[midPointer])
+            {
+                case 0:
+                    (nums[leftPointer], nums[midPointer]) = (nums[midPointer], nums[leftPointer]);
+                    leftPointer++;
+                    midPointer++;
+                    break;
+                case 1:
+                    midPointer++;
+                    break;
+                case 2:
+                    (nums[midPointer], nums[rightPointer]) = (nums[rightPointer], nums[midPointer]);
+                    rightPointer--;
+                    break;
+            }
+        }
+
+    }
+
+    public static int MinMovesToSeat(int[] seats, int[] students)
+    {
+        var ordenedSeats = seats.OrderBy(x => x).ToArray();
+        var ordenedStudents = students.OrderBy(x => x).ToArray();
+        var result = 0;
+        for (int i = 0; i < seats.Length; i++)
+        {
+            result += Math.Abs(ordenedSeats[i] - ordenedStudents[i]);
+        }
+        return result;
+    }
 }

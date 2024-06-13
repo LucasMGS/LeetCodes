@@ -1,4 +1,5 @@
 ﻿using LeetCodes;
+using LeetCodes.Problems;
 
 //Console.WriteLine(LeetCodes.Solution.ContainsDuplicate([1, 2, 2]));
 //Console.WriteLine(LeetCodes.Solution.IsAnagram("nagaram", "anagramm"));
@@ -21,4 +22,13 @@
 
 //}
 //Console.WriteLine(StringManipulations.FrequencySort("tree"));
-Console.WriteLine();
+//var trie = new Trie();
+//trie.Insert("apple");
+
+//var result = ArraysAndHashing.ReverseString(['h', 'a', 'n', 'n', 'a', 'h']);
+//Console.WriteLine(result);
+
+//ArraysAndHashing.SortColors([1,0,2]);
+
+var result = ArraysAndHashing.MinMovesToSeat([3,1,5], [2, 7, 4]);
+Console.WriteLine(result);
