@@ -30,5 +30,8 @@ using LeetCodes.Problems;
 
 //ArraysAndHashing.SortColors([1,0,2]);
 
-var result = ArraysAndHashing.MinMovesToSeat([3,1,5], [2, 7, 4]);
+//var result = ArraysAndHashing.MinMovesToSeat([3,1,5], [2, 7, 4]);
+//Console.WriteLine(result);
+
+var result = ArraysAndHashing.MinIncrementForUnique([3, 2, 1, 2, 1, 7]);
 Console.WriteLine(result);

@@ -226,4 +226,24 @@ public static class ArraysAndHashing
         }
         return result;
     }
+
+    public static  int MinIncrementForUnique(int[] nums)
+    {
+        Dictionary<int,int> result = [];
+        int numMoves = 0;
+        Array.Sort(nums);
+
+        var prevNumb = nums[0];
+
+        for(int i = 1; i < nums.Length; i++)
+        {
+            if (nums[i] <= prevNumb)
+            {
+                numMoves += (prevNumb + 1 - nums[i]);
+                nums[i] = prevNumb + 1;
+            }
+            prevNumb = nums[i];
+        }
+        return numMoves;
+    }
 }
